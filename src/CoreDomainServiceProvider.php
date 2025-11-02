@@ -19,8 +19,9 @@ class CoreDomainServiceProvider extends PackageServiceProvider
             ->name('core-domain')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_core_domain_table')
-            ->hasCommand(CoreDomainCommand::class);
+            ->hasCommand(CoreDomainCommand::class)
+            ->discoversMigrations()
+            ->runsMigrations();
     }
 
     public function registeringPackage(): void
