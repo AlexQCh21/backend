@@ -5,9 +5,10 @@ providers:
 
 migrations:
   - workbench/database/migrations
+  - database/migrations
 
-seeders:
-  - IncadevUns\CoreDomain\Database\Seeders\IncadevSeeder
+#seeders:
+#  - IncadevUns\CoreDomain\Database\Seeders\IncadevSeeder
 
 workbench:
   start: '/'
