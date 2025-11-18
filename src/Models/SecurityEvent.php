@@ -2,10 +2,10 @@
 
 namespace IncadevUns\CoreDomain\Models;
 
-use IncadevUns\CoreDomain\Enums\SecurityEventSeverity;
-use IncadevUns\CoreDomain\Enums\SecurityEventType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use IncadevUns\CoreDomain\Enums\SecurityEventSeverity;
+use IncadevUns\CoreDomain\Enums\SecurityEventType;
 
 class SecurityEvent extends Model
 {
