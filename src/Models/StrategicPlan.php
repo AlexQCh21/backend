@@ -28,6 +28,7 @@ class StrategicPlan extends Model
     public function user()
     {
         $userModel = config('auth.providers.users.model', \App\Models\User::class);
+
         return $this->belongsTo($userModel, 'user_id');
     }
 
