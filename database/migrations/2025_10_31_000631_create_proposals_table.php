@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('proposals', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('campaign_id');
             $table->string('title');
-            $table->string('platform'); // Facebook, TikTok, etc.
             $table->text('content')->nullable();
-            $table->string('image_url')->nullable();
             $table->timestamps();
-            $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
         });
     }
 
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('proposals');
     }
 };
