@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('campaigns', function (Blueprint $table) {
+        Schema::create('metrics', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
+            $table->foreignId('campaign_id')->constrained('campaigns')->onDelete('cascade');
+            $table->integer('views')->default(0);
+            $table->integer('likes')->default(0);
+            $table->integer('comments')->default(0);
+            $table->integer('shares')->default(0);
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('campaigns');
+        Schema::dropIfExists('metrics');
     }
 };
