@@ -38,9 +38,4 @@ class Software extends Model
     {
         return $this->hasMany(License::class, 'software_id');
     }
-
-    public function asset(): BelongsTo
-    {
-        return $this->belongsTo(TechAsset::class, 'asset_id');
-    }
 }

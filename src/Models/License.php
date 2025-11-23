@@ -5,6 +5,7 @@ namespace IncadevUns\CoreDomain\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @method static \Illuminate\Database\Eloquent\Builder<static>|License newModelQuery()
@@ -46,5 +47,9 @@ class License extends Model
     public function software(): BelongsTo
     {
         return $this->belongsTo(Software::class);
+    }
+
+    public function assignments(): HasMany {
+        return $this->hasMany(LicenseAssignment::class, 'license_id');
     }
 }
