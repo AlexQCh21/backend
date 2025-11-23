@@ -27,15 +27,14 @@ class StrategicObjective extends Model
         'kpis' => 'array',
     ];
 
-    public function plan(): BelongsTo
+    public function plan()
     {
         return $this->belongsTo(StrategicPlan::class, 'plan_id');
     }
 
-    public function user(): BelongsTo
+    public function user()
     {
         $userModel = config('auth.providers.users.model', \App\Models\User::class);
-
         return $this->belongsTo($userModel, 'user_id');
     }
 }

@@ -27,19 +27,18 @@ class Iniciative extends Model
         'end_date' => 'date',
     ];
 
-    public function plan(): BelongsTo
+    public function plan()
     {
         return $this->belongsTo(StrategicPlan::class, 'plan_id');
     }
 
-    public function user(): BelongsTo
+    public function user()
     {
         $userModel = config('auth.providers.users.model', \App\Models\User::class);
-
         return $this->belongsTo($userModel, 'user_id');
     }
 
-    public function evaluations(): HasMany
+    public function evaluations()
     {
         return $this->hasMany(IniciativeEvaluation::class, 'iniciative_id');
     }
