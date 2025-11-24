@@ -96,21 +96,6 @@ trait HasIncadevCore
         return $this->hasMany(Contract::class);
     }
 
-    public function applications(): HasMany
-    {
-        return $this->hasMany(Application::class);
-    }
-
-    public function offersAppliedTo(): BelongsToMany
-    {
-        return $this->belongsToMany(
-            Offer::class,
-            'applications',
-            'user_id',
-            'offer_id'
-        )->withPivot('cv_path', 'status', 'created_at');
-    }
-
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
